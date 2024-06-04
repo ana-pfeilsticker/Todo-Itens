@@ -1,0 +1,36 @@
+*{
+    margin: 0;
+    padding: 0;
+}
+
+.groceries-page-wraper{
+    background-color: rgb(185, 179, 187);
+    height: 100vh;
+    width: 100%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+html{
+    font-size: 62.5%;
+}
+
+@media screen  and (max-width:1440px) {
+    html{
+        font-size: 62%;
+    }
+}
+
+@media screen  and (max-width:834px) {
+    html{
+        font-size: 61%;
+    }
+}
+
+
+@media screen  and (max-width:480px) {
+    html{
+        font-size: 60%;
+    }
+}

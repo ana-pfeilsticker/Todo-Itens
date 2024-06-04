@@ -1,14 +1,14 @@
 
 import './App.css'
+import Groceries from './pages/Groceries'
 
 function App() {
 
   return (
-    <>
-      <div>
-        Olá Mundo
-      </div>
-    </>
+    <div className="groceries-page-wraper">
+       <Groceries />
+    </div>
+  
   )
 }
 
