@@ -5,10 +5,11 @@
     flex-direction: column;
     align-items: center;
     gap: 20px;
-    height: fit-content;
+    height: 70vh;
     min-height: 500px;
     background: rgba(252, 252, 252, 0.89);
     border-radius: 30px;
+    align-items: center;
 }
 
 
@@ -48,5 +49,21 @@ h1{
     font-size: 2.4rem;
     color: rgba(131, 131, 131, 0.432);
     cursor: pointer;
+  }
+
+
+  .list-itens{
+    overflow-y: auto;
+    height: 70%;
+    width: 90%;
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    align-items: center;
+    justify-content: flex-start;
+  }
+
+  .list-itens::-webkit-scrollbar {
+    display: none;
   }
   
