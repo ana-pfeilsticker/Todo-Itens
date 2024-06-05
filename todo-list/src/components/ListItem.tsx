@@ -1,5 +1,5 @@
 
-import React from 'react'
+import React, { useState } from 'react'
 import { IoTrashOutline } from "react-icons/io5";
 import '../styles/ListItem.css'
 
@@ -14,12 +14,20 @@ interface ListItemProps{
 
 
 const ListItem: React.FC<ListItemProps> = ({ item }) => {
+
+
+  const [done, setDone] = useState(item.done)
+
+  
+
+
+
   return (
     <div className="list-item-wraper">
-        <div className="todo-check">
+        <div className={`todo-check ${done ? 'done' : ''}`} onClick={()=> setDone(!done)}>
 
         </div>
-        <h2 className="todo-text">
+        <h2 className={`todo-text ${done ? 'done' : ''}`}>
           {item.text}
         </h2>
 

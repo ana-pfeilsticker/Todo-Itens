@@ -27,6 +27,15 @@
 }
 
 
+.todo-check.done{
+    background-color: #22004e8c;
+}
+
+
+.todo-text.done{
+    text-decoration: line-through;
+}
+
 .icon-trash{
     font-size: 2rem;
     justify-self: flex-end;
