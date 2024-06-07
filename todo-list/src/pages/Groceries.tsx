@@ -22,6 +22,16 @@ function Groceries() {
     setGroceries([...groceries, newGrocery])
   }
 
+  const deleteGrocery = (index:number) => {
+    const newGroceries = groceries.filter((_,i)=> i !== index);
+    setGroceries(newGroceries);
+  }
+
+  const toggleDone = (index:number) => {
+    const newGroceries = groceries.map((grocery, i)=>
+    i === index? {...grocery, done:!grocery.done} : grocery);
+    setGroceries(newGroceries)
+  }
 
 
   return (
@@ -36,7 +46,7 @@ function Groceries() {
         <AddTask addGrocery={addGrocery} />
         <div className="list-itens">
           {groceries.map((item, index)=> (
-              <ListItem key={index} item={item} />
+              <ListItem key={index} item={item} onDelete={()=> deleteGrocery(index)} onToggleDone={() => toggleDone(index)}/>
           ))}
 
   

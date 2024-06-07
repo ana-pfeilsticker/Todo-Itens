@@ -10,13 +10,15 @@ interface Item {
 
 interface ListItemProps{
   item: Item;
+  onDelete: () => void;
+  onToggleDone: () => void;
 }
 
 
-const ListItem: React.FC<ListItemProps> = ({ item }) => {
+const ListItem: React.FC<ListItemProps> = ({ item, onDelete, onToggleDone }) => {
 
 
-  const [done, setDone] = useState(item.done)
+
 
   
 
@@ -24,14 +26,14 @@ const ListItem: React.FC<ListItemProps> = ({ item }) => {
 
   return (
     <div className="list-item-wraper">
-        <div className={`todo-check ${done ? 'done' : ''}`} onClick={()=> setDone(!done)}>
+        <div className={`todo-check ${item.done ? 'done' : ''}`} onClick={onToggleDone}>
 
         </div>
-        <h2 className={`todo-text ${done ? 'done' : ''}`}>
+        <h2 className={`todo-text ${item.done ? 'done' : ''}`}>
           {item.text}
         </h2>
 
-        <IoTrashOutline className='icon-trash'/>
+        <IoTrashOutline className='icon-trash' onClick={onDelete}/>
 
         
     </div>
